@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const BannerContainer = styled.div`
   position: relative; /* Position relative to allow absolute positioning of the overlay */
   margin-top: -7%;
-  background-image: url('public/images/rs3.jpg');
+  background-image: url('/public/images/rs3.jpg');
   background-size: cover; 
   background-position: center; /* Center the image */
   width: 100%; /* Full width */
