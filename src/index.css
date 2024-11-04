@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Style for h1 */
+  h1 {
+    font-family: "Playfair Display", serif; /* Font family */
+    font-weight: 400;                       /* Font weight */
+    font-size: 43px;                        /* Font size */
+    color: #000000;                         /* Text color */
+    line-height: 47.3px;                   /* Line height */
+    text-decoration: none;                  /* Text decoration */
+    transform: none;                        /* No transformation */
+    letter-spacing: 0;                      /* Letter spacing */
+  }
+  
+  /* Style for h2 */
+  h2 {
+    font-family: "Playfair Display", serif; /* Font family */
+    font-weight: 400;                       /* Font weight */
+    font-size: 30px;                        /* Font size */
+    color: #000000;                         /* Text color */
+    line-height: 33px;                     /* Line height */
+    text-decoration: none;                  /* Text decoration */
+    transform: none;                        /* No transformation */
+    letter-spacing: 0;                      /* Letter spacing */
+  }
+  
+  /* Style for h3 */
+  h3 {
+    font-family: "Playfair Display", serif; /* Font family */
+    font-weight: 400;                       /* Font weight */
+    font-size: 30px;                        /* Font size */
+    color: #ffffff;                         /* Text color */
+    line-height: 33px;                     /* Line height */
+    text-decoration: none;                  /* Text decoration */
+    transform: none;                        /* No transformation */
+    letter-spacing: 0;                      /* Letter spacing */
+  }
+  
+  /* Style for p */
+  p {
+    font-family: 'Karla', sans-serif;       /* Font family */
+    font-weight: normal;                    /* Font weight */
+    font-size: 16px;                        /* Font size */
+    color: #000000;                         /* Text color */
+    line-height: 26.656px;                 /* Line height */
+    text-decoration: none;                  /* Text decoration */
+    transform: none;                        /* No transformation */
+    letter-spacing: 0;                      /* Letter spacing */
+  }
+  
+  /* General reset for all text content */
+  * {
+    font-family: "Playfair Display", serif; /* Default font family for all text */
+    font-weight: 400;                       /* Default font weight */
+    color: #000;                            /* Default text color */
+    text-decoration: none;                  /* Remove text decoration */
+    text-transform: none;                   /* No text transformation */
+    letter-spacing: 1px;                   /* Default letter spacing */
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+  
