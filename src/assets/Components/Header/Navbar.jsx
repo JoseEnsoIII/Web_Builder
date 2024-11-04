@@ -115,17 +115,39 @@ const Logo = styled.div`
 const NavLinks = styled.ul`
   display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; /* Show or hide based on state */
   flex-direction: column; /* Stack links vertically for mobile */
-  gap: 0.5rem; /* Adjust spacing between links */
+  gap: 0.3rem; /* Default spacing between links */
   list-style: none;
   margin: 0;
-  padding: 1rem; /* Padding around the menu for better visibility */
+  padding: 0.5rem; /* Default padding */
   background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
   position: absolute; /* Position the menu absolutely */
   top: 65px; /* Position it below the navbar */
   left: 0;
   width: 100%; /* Full width */
   z-index: 1002; /* Above other content */
-  justify-content: center; /* Center the links */
+  justify-content: center; /* Center the links horizontally */
+  align-items: center; /* Center the links vertically */
+  height: auto; /* Auto height to fit content */
+
+  @media (max-width: 480px) { /* For screens up to 480px */
+    padding: 0.3rem; /* Reduced padding */
+    gap: 0.2rem; /* Further decreased gap */
+  }
+
+ @media (max-width: 380px) { /* For screens up to 380px */
+    padding: 0.2rem; /* Even smaller padding */
+    gap: 0.1rem; /* Minimal gap for very small screens */
+    font-size: 0.8rem; /* Smaller font size for better fit */
+    margin-left:-10%;
+  }
+
+  @media (min-width: 481px) 
+  margin-right:5%;
+    flex-direction: column; /* Ensure vertical stacking */
+    padding: 0.4rem; /* Slightly reduced padding for tablet view */
+    gap: 0.2rem; /* Adjust gap for compactness */
+    margin-left:-10%;
+  }
 
   @media (min-width: 1000px) {
     display: flex; /* Show links in row on larger screens */
@@ -133,12 +155,13 @@ const NavLinks = styled.ul`
     position: static; /* Reset position on larger screens */
     padding: 0; /* Remove padding for larger screens */
     background-color: transparent; /* Reset background */
+    height: auto; /* Reset height for larger screens */
   }
 
   li a {
     color: #e0e0e0;
     text-decoration: none;
-    padding: 0.5rem 1rem; /* Add padding to links */
+    padding: 0.3rem 0.5rem; /* Adjusted padding to make links smaller */
     transition: background-color 0.3s; /* Transition for background change */
     
     &:hover {
@@ -146,6 +169,7 @@ const NavLinks = styled.ul`
     }
   }
 `;
+
 
 const Hamburger = styled.div`
   margin-right: 20%; /* Move the hamburger menu 5% to the left */
