@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+const App = () => {
+  return (
+    <Container>
+      <Navbar isFixed={true} />
+
+    </Container>
+  );
+};
+
 const Navbar = ({ isFixed }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,7 +26,7 @@ const Navbar = ({ isFixed }) => {
       const currentScrollTop = window.scrollY;
 
       setIsScrolled(currentScrollTop > 0);
-      if (currentScrollTop > lastScrollTop && currentScrollTop > 300) {
+      if (currentScrollTop > lastScrollTop && currentScrollTop > 400) {
         setIsVisible(false);
       } else if (currentScrollTop <= 200) {
         setIsVisible(true);
@@ -35,6 +44,11 @@ const Navbar = ({ isFixed }) => {
   return (
     <Nav $isScrolled={isScrolled} $isVisible={isVisible} $isFixed={isFixed}>
       <Logo>Enso</Logo>
+      <Hamburger onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </Hamburger>
       <NavLinks $isOpen={isOpen}>
         <li><a href="/">Meet the Team</a></li>
         <li><a href="/">Search for Homes</a></li>
@@ -45,21 +59,24 @@ const Navbar = ({ isFixed }) => {
         <li><a href="/">Testimonials</a></li>
         <li><a href="/">Contact Us</a></li>
       </NavLinks>
-      <Hamburger onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </Hamburger>
     </Nav>
   );
 };
 
-export default Navbar;
+const Banner = styled.div`
+  background: url('banner-image.jpg') no-repeat center center/cover; /* Replace with your banner image */
+  height: 300px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  z-index: 1; /* Set lower z-index than Navbar */
+`;
 
-// Styled Components
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Distributes space between logo and hamburger */
   align-items: center;
   padding: 1rem 2rem;
   background-color: ${({ $isScrolled }) => ($isScrolled ? '#000' : 'transparent')};
@@ -70,35 +87,62 @@ const Nav = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1001; /* Set higher z-index than Banner */
   transform: ${({ $isVisible }) => ($isVisible ? 'translateY(0)' : 'translateY(-100%)')};
+
+  @media (max-width: 999px) {
+    background-color: #000; /* Set background to black on mobile and tablet */
+    padding: 1rem; /* Adjust padding for smaller screens */
+    justify-content: space-between; /* Keep logo on left and hamburger on right */
+  }
 `;
 
+
 const Logo = styled.div`
-  margin-left: 5%;
+  margin-left: 5%; /* Margin for left alignment */
   font-size: 1.5rem;
   font-family: 'Georgia', serif;
   font-weight: bold;
   color: white;
-  span {
-    font-family: 'Arial', sans-serif;
-  }
 `;
 
 const NavLinks = styled.ul`
-  display: flex;
-  gap: 2rem;
+  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; /* Show or hide based on state */
+  flex-direction: column; /* Stack links vertically for mobile */
+  gap: 0.5rem; /* Adjust spacing between links */
   list-style: none;
-  transition: all 0.3s ease;
-  margin-right: 8%;
-  
+  margin: 0;
+  padding: 1rem; /* Padding around the menu for better visibility */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  position: absolute; /* Position the menu absolutely */
+  top: 65px; /* Position it below the navbar */
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1002; /* Above other content */
+  justify-content: center; /* Center the links */
+
+  @media (min-width: 1000px) {
+    display: flex; /* Show links in row on larger screens */
+    flex-direction: row; /* Align links horizontally */
+    position: static; /* Reset position on larger screens */
+    padding: 0; /* Remove padding for larger screens */
+    background-color: transparent; /* Reset background */
+  }
+
   li a {
     color: #e0e0e0;
     text-decoration: none;
+    padding: 0.5rem 1rem; /* Add padding to links */
+    transition: background-color 0.3s; /* Transition for background change */
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    }
   }
 `;
 
 const Hamburger = styled.div`
+  margin-right: 5%; /* Margin for right alignment */
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -111,3 +155,9 @@ const Hamburger = styled.div`
     transition: all 0.3s ease;
   }
 `;
+
+const Container = styled.div`
+  position: relative; /* Ensure that Navbar and Banner stack correctly */
+`;
+
+export default App;

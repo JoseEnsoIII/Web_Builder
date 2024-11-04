@@ -1,13 +1,12 @@
 // Import React and Router components
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from '../src/assets/Components/Header/Navbar';
-import SBanner from '../src/assets//Components/Banner/Service_Banner'; 
-import ANavbar from '../src/assets//Components/Header/Appointment'; 
-import Service from '../src/assets//Components/Section/Service'; 
-import Services from '../src/assets//Components/Section/Services'; 
-import Contact from '../src/assets//Components/Section/ContactUs'; 
-import Footer from '../src/assets//Components/Footer/Footer';
+import SBanner from './assets/Components/Banner/Service_Banner'; 
+import ANavbar from './assets/Components/Header/Appointment'; 
+import Service from './assets/Components/Section/Service'; 
+import Services from './assets/Components/Section/Services'; 
+import Contact from './assets/Components/Section/ContactUs'; 
+import Footer from './assets/Components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <Navbar />
               <SBanner />
               <ANavbar />
               <Service />
@@ -26,6 +24,7 @@ function App() {
               <Footer />
             </>
           } />
+          {/* Add more routes here if needed */}
         </Routes>
       </Router>
     </div>

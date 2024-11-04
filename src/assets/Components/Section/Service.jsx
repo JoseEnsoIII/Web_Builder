@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageSection from './ImageSection'; // Adjust the path based on your file structure
 
 const servicesData = [
     {
@@ -32,14 +33,10 @@ const Services = () => {
             margin: '20px',
             padding: '5%',
         },
-        sectionStyle: {
-            textAlign: 'center',
-            marginBottom: '40px', // Added margin for spacing
-        },
         titleStyle: {
             fontSize: '43px',
             fontWeight: 400,
-            fontFamily: '"Playfair Display", serif', // Ensure you have Playfair Display in your project
+            fontFamily: '"Playfair Display", serif',
             color: '#000000',
             lineHeight: '47.3px',
             textDecoration: 'none',
@@ -47,57 +44,27 @@ const Services = () => {
             transform: 'none',
             marginBottom: '20px',
         },
-        h2Style: {
-            fontSize: '30px',
-            fontWeight: 400,
-            fontFamily: '"Playfair Display", serif',
-            color: '#000000',
-            lineHeight: '33px',
-            textDecoration: 'none',
-            letterSpacing: '0',
-            transform: 'none',
-            margin: '10px 0', // Optional: add some margin to space h2 elements
-        },
         h3Style: {
             fontSize: '30px',
             fontWeight: 400,
             fontFamily: '"Playfair Display", serif',
-            color: '#000', // Updated color
+            color: '#000',
             lineHeight: '33px',
             textDecoration: 'none',
             letterSpacing: '0',
             transform: 'none',
-            margin: '10px 0', // Optional: add some margin to space h3 elements
+            margin: '10px 0',
         },
         pStyle: {
             fontSize: '16px',
             fontWeight: 'normal',
-            fontFamily: 'Karla, sans-serif', // Ensure you have Karla in your project
+            fontFamily: 'Karla, sans-serif',
             color: '#000000',
             lineHeight: '26.656px',
             textDecoration: 'none',
             letterSpacing: '0',
             transform: 'none',
-            margin: '10px 0', // Optional: add some margin to space paragraphs
-        },
-        imagesStyle: {
-            display: 'flex',
-            flexWrap: 'wrap', // Allow images to wrap in smaller screens
-            justifyContent: 'space-between', // Adjusted to space elements evenly
-            alignItems: 'flex-start', // Align items at the start for better vertical alignment
-            marginBottom: '20px', // Align with service items
-        },
-        imageContainerStyle: {
-            display: 'flex',
-            flexDirection: 'column', // Stack image and title vertically
-            alignItems: 'center', // Center-align text under images
-            margin: '0 10px', // Add some space between images
-            flex: '1 0 21%', // Adjust the flex property for responsiveness
-            maxWidth: '150px', // Set a max width for the images
-        },
-        imageStyle: {
-            width: '100%', // Adjust width as needed
-            height: 'auto', // Maintain aspect ratio
+            margin: '10px 0',
         },
         serviceItem: {
             display: 'flex',
@@ -122,26 +89,7 @@ const Services = () => {
             <h1 style={styles.titleStyle}>Comprehensive Marketing Plan</h1>
             
             {/* Image Section */}
-            <div style={styles.sectionStyle}>
-                <div style={styles.imagesStyle}>
-                    <div style={styles.imageContainerStyle}>
-                        <img src="https://res.cloudinary.com/luxuryp/images/f_auto,q_auto/rmtn3r5zpsljdsncbwa4/image-007" alt="Responsive" style={styles.imageStyle} />
-                        <h2 style={styles.h2Style}>Responsive</h2>
-                    </div>
-                    <div style={styles.imageContainerStyle}>
-                        <img src="https://res.cloudinary.com/luxuryp/images/f_auto,q_auto/ks8ztlvw2b35q5qgs6xn/image-011" alt="Syndication" style={styles.imageStyle} />
-                        <h2 style={styles.h2Style}>Syndication</h2>
-                    </div>
-                    <div style={styles.imageContainerStyle}>
-                        <img src="https://res.cloudinary.com/luxuryp/images/f_auto,q_auto/zr3bugldblvebixagfs1/image-009" alt="Virtual Tour" style={styles.imageStyle} />
-                        <h2 style={styles.h2Style}>Virtual Tour</h2>
-                    </div>
-                    <div style={styles.imageContainerStyle}>
-                        <img src="https://res.cloudinary.com/luxuryp/images/f_auto,q_auto/dywgmsgzddtcsqxagbwh/image-013" alt="Photography" style={styles.imageStyle} />
-                        <h2 style={styles.h2Style}>Photography</h2>
-                    </div>
-                </div>
-            </div>
+            <ImageSection />
 
             {/* Services List */}
             {servicesData.map((service, index) => (
@@ -156,8 +104,8 @@ const Services = () => {
                         <img src={service.image} alt={service.title} style={styles.serviceImageImg} />
                     </div>
                     <div style={styles.serviceText}>
-                    <h3 style={styles.h3Style}>{service.title}</h3>
-                    <p style={styles.pStyle}>{service.description}</p>
+                        <h3 style={styles.h3Style}>{service.title}</h3>
+                        <p style={styles.pStyle}>{service.description}</p>
                     </div>
                 </div>
             ))}
