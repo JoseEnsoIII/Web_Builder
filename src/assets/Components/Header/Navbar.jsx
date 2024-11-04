@@ -148,7 +148,7 @@ const NavLinks = styled.ul`
 `;
 
 const Hamburger = styled.div`
-  margin-right: 10%; /* Move the hamburger menu 5% to the left */
+  margin-right: 20%; /* Move the hamburger menu 5% to the left */
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -161,6 +161,33 @@ const Hamburger = styled.div`
     transition: all 0.3s ease;
   }
 
+  /* Tablet styles */
+  @media (max-width: 999px) {
+    margin-right: 10%; /* Adjust margin for tablet view if necessary */
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    margin-right: 15%; /* Further adjust margin for mobile view */
+    display: flex; /* Ensure the hamburger menu is displayed on mobile */
+  }
+  @media (max-width: 480px) {
+    margin-right: 23%; /* Adjust margin for larger mobile devices */
+    span {
+      width: 20px; /* Adjust width of spans for smaller screens */
+      margin: 3px 0; /* Adjust margin between spans */
+    }
+  }
+
+  /* Styles for small mobile devices */
+  @media (max-width: 320px) {
+    margin-right: 28%; /* Minimal margin for small devices */
+    span {
+      width: 18px; /* Further adjust width of spans */
+      height: 1.5px; /* Adjust height for a sleeker look */
+      margin: 2px 0; /* Adjust margin between spans */
+    }
+  }
   @media (min-width: 1000px) {
     display: none; /* Hide the hamburger menu on larger screens */
   }
