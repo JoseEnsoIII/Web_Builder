@@ -75,6 +75,34 @@ const ImageSection = () => {
             flex: '1 0 100%', // Full width for the last image
             maxWidth: '200px',
         },
+        mediaQuery: {
+            '@media (max-width: 480px)': {
+                h2Style: {
+                    fontSize: '24px', // Smaller font size for titles
+                },
+                imageContainerStyle: {
+                    maxWidth: '120px', // Smaller max width for images
+                },
+                mobileImageContainerStyle: {
+                    flex: '1 0 100%', // One image per row
+                    margin: '10px 0', // Add vertical margin
+                    maxWidth: '100px', // Set max width for mobile
+                },
+            },
+            '@media (max-width: 380px)': {
+                h2Style: {
+                    fontSize: '20px', // Even smaller font size for titles
+                },
+                imageContainerStyle: {
+                    maxWidth: '100px', // Further reduce max width for images
+                },
+                mobileImageContainerStyle: {
+                    flex: '1 0 100%', // Still one image per row
+                    margin: '10px 0', // Consistent vertical margin
+                    maxWidth: '80px', // Further reduce max width for mobile
+                },
+            },
+        },
     };
 
     // Check for mobile or tablet screen size
@@ -89,14 +117,14 @@ const ImageSection = () => {
                         return (
                             <div key={index} style={styles.lastImageContainerStyle}>
                                 <img src={image.src} alt={image.title} style={styles.imageStyle} />
-                                <h2 style={styles.h2Style}>{image.title}</h2>
+                                <h2 style={isMobileOrTablet ? styles.mediaQuery.h2Style : styles.h2Style}>{image.title}</h2>
                             </div>
                         );
                     }
                     return (
                         <div key={index} style={isMobileOrTablet ? styles.mobileImageContainerStyle : styles.imageContainerStyle}>
                             <img src={image.src} alt={image.title} style={styles.imageStyle} />
-                            <h2 style={styles.h2Style}>{image.title}</h2>
+                            <h2 style={isMobileOrTablet ? styles.mediaQuery.h2Style : styles.h2Style}>{image.title}</h2>
                         </div>
                     );
                 })}
