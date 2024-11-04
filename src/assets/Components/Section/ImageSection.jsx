@@ -81,12 +81,11 @@ const ImageSection = () => {
                     fontSize: '24px', // Smaller font size for titles
                 },
                 imageContainerStyle: {
-                    maxWidth: '120px', // Smaller max width for images
+                    maxWidth: '10px', // Smaller max width for images
                 },
                 mobileImageContainerStyle: {
                     flex: '1 0 100%', // One image per row
                     margin: '10px 0', // Add vertical margin
-                    maxWidth: '100px', // Set max width for mobile
                 },
             },
             '@media (max-width: 380px)': {
@@ -99,7 +98,6 @@ const ImageSection = () => {
                 mobileImageContainerStyle: {
                     flex: '1 0 100%', // Still one image per row
                     margin: '10px 0', // Consistent vertical margin
-                    maxWidth: '80px', // Further reduce max width for mobile
                 },
             },
         },
