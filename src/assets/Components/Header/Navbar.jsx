@@ -5,7 +5,7 @@ const App = () => {
   return (
     <Container>
       <Navbar isFixed={true} />
-
+      {/* Other content can go here */}
     </Container>
   );
 };
@@ -79,7 +79,7 @@ const Nav = styled.nav`
   justify-content: space-between; /* Distributes space between logo and hamburger */
   align-items: center;
   padding: 1rem 2rem;
-  background-color: ${({ $isScrolled }) => ($isScrolled ? '#000' : 'transparent')};
+  background-color: transparent; /* Default background color */
   transition: background-color 0.3s ease, transform 0.3s ease;
   color: #fff;
   height: 65px;
@@ -91,11 +91,17 @@ const Nav = styled.nav`
   transform: ${({ $isVisible }) => ($isVisible ? 'translateY(0)' : 'translateY(-100%)')};
 
   @media (max-width: 999px) {
-    background-color: #000; /* Set background to black on mobile and tablet */
+    background-color: #000; /* Set the background color to black */
     padding: 1rem; /* Adjust padding for smaller screens */
     justify-content: space-between; /* Keep logo on left and hamburger on right */
   }
+  
+  @media (min-width: 1000px) {
+    background-color: transparent; /* Keep transparent for larger screens */
+  }
 `;
+
+
 
 
 const Logo = styled.div`
@@ -142,7 +148,7 @@ const NavLinks = styled.ul`
 `;
 
 const Hamburger = styled.div`
-  margin-right: 5%; /* Margin for right alignment */
+  margin-right: 10%; /* Move the hamburger menu 5% to the left */
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -154,7 +160,12 @@ const Hamburger = styled.div`
     margin: 4px 0;
     transition: all 0.3s ease;
   }
+
+  @media (min-width: 1000px) {
+    display: none; /* Hide the hamburger menu on larger screens */
+  }
 `;
+
 
 const Container = styled.div`
   position: relative; /* Ensure that Navbar and Banner stack correctly */

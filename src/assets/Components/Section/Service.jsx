@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ImageSection from './ImageSection'; // Adjust the path based on your file structure
 
 const servicesData = [
@@ -25,6 +25,19 @@ const servicesData = [
 ];
 
 const Services = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 999);
+
+    const handleResize = () => {
+        setIsMobile(window.innerWidth < 999);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     // Define the styles as JavaScript objects
     const styles = {
         container: {
@@ -81,6 +94,7 @@ const Services = () => {
         serviceText: {
             flex: 1,
             padding: '0 20px',
+            display: isMobile ? 'none' : 'block', // Hide text if on mobile
         },
     };
 
