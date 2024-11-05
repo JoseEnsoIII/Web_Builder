@@ -101,9 +101,6 @@ const Nav = styled.nav`
   }
 `;
 
-
-
-
 const Logo = styled.div`
   margin-left: 5%; /* Margin for left alignment */
   font-size: 1.5rem;
@@ -134,19 +131,19 @@ const NavLinks = styled.ul`
     gap: 0.2rem; /* Further decreased gap */
   }
 
- @media (max-width: 380px) { /* For screens up to 380px */
+  @media (max-width: 380px) { /* For screens up to 380px */
     padding: 0.2rem; /* Even smaller padding */
     gap: 0.1rem; /* Minimal gap for very small screens */
     font-size: 0.8rem; /* Smaller font size for better fit */
-    margin-left:-10%;
+    margin-left: -10%;
   }
 
-  @media (min-width: 481px) 
-  margin-right:5%;
+  @media (min-width: 481px) {
+    margin-right: 5%;
     flex-direction: column; /* Ensure vertical stacking */
     padding: 0.4rem; /* Slightly reduced padding for tablet view */
     gap: 0.2rem; /* Adjust gap for compactness */
-    margin-left:-10%;
+    margin-left: -10%;
   }
 
   @media (min-width: 1000px) {
@@ -169,7 +166,6 @@ const NavLinks = styled.ul`
     }
   }
 `;
-
 
 const Hamburger = styled.div`
   margin-right: 20%; /* Move the hamburger menu 5% to the left */
@@ -195,6 +191,7 @@ const Hamburger = styled.div`
     margin-right: 15%; /* Further adjust margin for mobile view */
     display: flex; /* Ensure the hamburger menu is displayed on mobile */
   }
+
   @media (max-width: 480px) {
     margin-right: 23%; /* Adjust margin for larger mobile devices */
     span {
@@ -212,11 +209,11 @@ const Hamburger = styled.div`
       margin: 2px 0; /* Adjust margin between spans */
     }
   }
+
   @media (min-width: 1000px) {
     display: none; /* Hide the hamburger menu on larger screens */
   }
 `;
-
 
 const Container = styled.div`
   position: relative; /* Ensure that Navbar and Banner stack correctly */

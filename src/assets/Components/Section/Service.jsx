@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ImageSection from './ImageSection'; // Adjust the path based on your file structure
+import ImageSection from './ImageSection';
 
 const servicesData = [
     {
@@ -55,7 +55,8 @@ const Services = () => {
             textDecoration: 'none',
             letterSpacing: '0',
             transform: 'none',
-            marginBottom: '20px',
+            marginTop:'5%',
+            
         },
         h3Style: {
             fontSize: '30px',
@@ -66,7 +67,9 @@ const Services = () => {
             textDecoration: 'none',
             letterSpacing: '0',
             transform: 'none',
-            margin: '10px 0',
+            margin: '20px 0 10px 0', // Default margin for desktop
+
+         
         },
         pStyle: {
             fontSize: '16px',
