@@ -3,20 +3,40 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   height: 100%;
-  padding: 20px 10px;
+  padding: 20px;
   background-color: #fff;
   font-size: 14px;
-
   display: flex;
   flex-direction: row; /* Default to row */
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
   width: 100%;
   flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  max-width: 1200px; /* Optional: limit maximum width */
 
+  /* Media query for devices with a max width of 768px */
   @media (max-width: 768px) {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
+    width: 80%; /* Optional: limit width */
+  }
+
+  /* Media query for devices with a max width of 480px */
+  @media (max-width: 480px) {
+    padding: 15px; /* Adjust padding for smaller devices */
+    font-size: 12px; /* Adjust font size for better readability */
+    width: 80%; /* Make it wider on small devices */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+
+  /* Media query for devices with a max width of 380px */
+  @media (max-width: 380px) {
+    padding: 10px; /* Further adjust padding for very small devices */
+    font-size: 11px; /* Further reduce font size */
+    width: 90%; /* Make it wider on very small devices */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
   }
 `;
 const SubscribeButton = styled.button`
