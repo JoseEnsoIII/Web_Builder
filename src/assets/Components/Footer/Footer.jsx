@@ -32,15 +32,32 @@ const SubscribeButton = styled.button`
 
 const TextBlock = styled.div`
   margin: 0 15px;
-  text-align: left;
+  text-align: left; /* Default to left alignment */
   color: black;
   width: 30%; /* Adjusted width for better responsiveness */
 
+  p {
+    text-align: left; /* Default to left alignment for desktop */
+    
+    @media (max-width: 768px) {
+      text-align: center; /* Center text on mobile and tablet */
+    }
+    
+    @media (max-width: 480px) {
+      text-align: center; /* Center text for smaller mobile devices */
+    }
+
+    @media (max-width: 380px) {
+      text-align: center; /* Center text for very small mobile devices */
+    }
+  }
+
   @media (max-width: 768px) {
     width: 100%; /* Full width on mobile */
-    text-align: center; /* Center text on mobile */
+    text-align: center; /* Center text on mobile for the TextBlock */
   }
 `;
+
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -74,11 +91,6 @@ const Footer = () => {
         <h2>Address:</h2>
         <div style={{ textAlign: "center", margin: "20px 0" }}>
           <p
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
           >
             <svg
               style={{
@@ -107,11 +119,6 @@ const Footer = () => {
         <h2>Contact Information:</h2>
         <div style={{ textAlign: "center", margin: "20px 0" }}>
           <p
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
           >
             <svg
               fill="none"
